@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+  animation: bg 6s linear 24s 1 alternate forwards;
+}
+
+main div {
+  width: 10%;
+  height: 12vh;
+  position: absolute;
+  opacity: 0;
+}
+
+main img {
+  position: absolute;
+  right: 43%;
+  top: 60px;
+  width: 150px;
+  height: 300px;
+  opacity: 0;
+  animation: eagle 3s linear 9s 1 alternate forwards running;
+}
+
+.div1 {
+  background-color: red;
+  top: 0;
+  z-index: -1;
+  animation: change1 3s linear 0s 1 alternate forwards running;
+  width: 25%;
+}
+
+.div2 {
+  background-color: blue;
+  top: 12%;
+  animation: change 3s linear 3s 1 reverse forwards running;
+
+}
+
+.div3 {
+  background-color: black;
+  top: 24%;
+  animation: change1 3s linear 6s 1 alternate forwards running;
+  width: 25%;
+  z-index: -1;
+}
+
+.div4 {
+  background-color: greenyellow;
+  top: 36%;
+  animation: change 3s linear 9s 1 reverse forwards running;
+
+}
+
+.div5 {
+  background-color: green;
+  top: 48%;
+  animation: change 3s linear 12s 1 alternate forwards running;
+
+}
+
+.div6 {
+  background-color: gray;
+  bottom: 29%;
+  animation: change 3s linear 15s 1 reverse forwards running;
+
+}
+
+.div7 {
+  background-color: gold;
+  bottom: 17%;
+  animation: change 3s linear 18s 1 alternate forwards running;
+
+}
+
+.div8 {
+  background-color: purple;
+  bottom: 5%;
+  animation: change 3s linear 21s 1 reverse forwards running;
+
+}
+
+@keyframes eagle {
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes change {
+  0% {
+    opacity: 1;
+    left: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+    background-color: #09c;
+    left: 50%;
+    border-radius: 50%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 90%;
+    border-radius: 10px;
+  }
+}
+
+@keyframes change1 {
+  0% {
+    opacity: 0.5;
+    left: 0;
+  }
+
+  100% {
+    opacity: 1;
+    left: 40%;
+  }
+}
+
+@keyframes bg {
+  0% {
+    height: 100vh;
+  }
+
+  50% {
+    height: 50vh;
+  }
+
+  100% {
+    height: 0vh;
+  }
+}
+
+section {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-position: center bottom;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.snow,
+.snow::after,
+.snow::before {
+  position: absolute;
+  top: -650px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff, transparent),
+    radial-gradient(4px 4px at 125px 75px, #fff, transparent),
+    radial-gradient(6px 6px at 225px 290px, #fff, transparent),
+    radial-gradient(3px 3px at 335px 390px, #fff, transparent),
+    radial-gradient(4px 4px at 425px 245px, #fff, transparent),
+    radial-gradient(6px 6px at 575px 920px, #fff, transparent),
+    radial-gradient(3px 3px at 75px 30px, #fff, transparent),
+    radial-gradient(4px 4px at 175px 670px, #fff, transparent),
+    radial-gradient(6px 6px at 275px 780px, #fff, transparent),
+    radial-gradient(3px 3px at 375px 840px, #fff, transparent);
+  background-size: 650px 650px;
+  animation: snowanim 9s linear infinite;
+}
+
+.snow::after {
+  margin-left: -350px;
+  opacity: 0.7;
+  filter: blur(1px);
+  animation-direction: reverse;
+  animation-duration: 6s;
+}
+
+@keyframes snowanim {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(650px);
+  }
+}
+
+/* rain */
+.rainsection {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/wp2529697.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.rain {
+  height: 100vh;
+  background-image: url(../images/rain.png);
+  animation: rain .5s linear infinite;
+}
+
+@keyframes rain {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 20% 100%;
+  }
+}
+
+/* night section */
+.bgnight {
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  overflow-y: hidden;
+}
+
+.night {
+  height: 80vh;
+  width: 70vw;
+  border: 1px solid black;
+  margin: 5rem auto;
+  background-image: url(../images/Img_1.png);
+  background-size: cover;
+  position: relative;
+  box-shadow: 1px 2px 60px rgba(0, 0, 0, 0);
+  overflow-x: hidden;
+}
+
+.surface {
+  height: 147px;
+  width: 500%;
+  background: url(../images/Img_02.png);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat-x;
+  animation: moveright 6s linear infinite;
+}
+
+.car {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  animation: suspension 1s linear infinite;
+}
+
+/* animation */
+@keyframes moveright {
+  100% {
+    transform: translatex(-2950px);
+  }
+}
+
+@keyframes suspension {
+  100% {
+    transform: translateY(-1px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+
+  0% {
+    transform: translateY(-1px);
+  }
+}
